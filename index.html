@@ -14,7 +14,13 @@
         <div class="img_showreel clearfix">
             <!-- Main img -->
             <div class="hero">
-               
+                <div v-for="card in cards" class="hero_content">
+                    <img :src="'./assets/' + card.img" alt="">
+                    <div class="hero_txt">
+                        <h1>{{card.title}}</h1>
+                        <p>{{card.text}}</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Carousel w/ thumbnails -->
