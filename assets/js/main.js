@@ -49,13 +49,40 @@ const root = new Vue({
 
     methods: {
         scrollUp(){
-            //code here
+            if(this.counter > 0){
+                //display none to previous hero img
+                this.cards[this.counter].status = false;
+                //remove active class to previous thumbnail
+                this.cards[this.counter].classActive = '';
+                
+                //increment counter
+                this.counter--
+
+                //display block to current hero img
+                this.cards[this.counter].status = true;
+                //add active class to current thumbnail
+                this.cards[this.counter].classActive = 'active';
+
+            } else {
+                //remove display & class to last elements in array
+                this.cards[this.counter].status = false;
+                this.cards[this.counter].classActive = '';
+                
+                //reset counter
+                this.counter = this.cards.length - 1;
+
+                //add display & class to first elements in array
+                this.cards[this.counter].status = true;
+                this.cards[this.counter].classActive = 'active';
+            }
+            console.log(this.counter);
         },
         
         scrollDown(){
             if(this.counter < this.cards.length - 1){
                 //display none to previous hero img
                 this.cards[this.counter].status = false;
+                //remove active class to previous thumbnail
                 this.cards[this.counter].classActive = '';
                 
                 //increment counter
@@ -63,11 +90,22 @@ const root = new Vue({
 
                 //display block to current hero img
                 this.cards[this.counter].status = true;
+                //add active class to current thumbnail
                 this.cards[this.counter].classActive = 'active';
-                // console.log(this.cards);
 
+            } else {
+                //remove display & class to last elements in array
+                this.cards[this.counter].status = false;
+                this.cards[this.counter].classActive = '';
+                
+                //reset counter
+                this.counter = 0;
 
+                //add display & class to first elements in array
+                this.cards[this.counter].status = true;
+                this.cards[this.counter].classActive = 'active';
             }
+            console.log(this.counter);
         }
 
     }
