@@ -14,7 +14,7 @@
         <div class="img_showreel clearfix">
             <!-- Main img -->
             <div class="hero">
-                <div v-for="card in cards" v-if="card.status" class="hero_content">
+                <div v-for="card in cards" v-show="card.status" class="hero_content">
                     <img :src="'./assets/' + card.img" alt="">
                     <div class="hero_txt">
                         <h1>{{card.title}}</h1>
@@ -26,7 +26,7 @@
             <!-- Carousel w/ thumbnails -->
             <div class="carousel">
                 <!-- Thumbnails  -->
-                <div v-for="(card, index) in cards" class="thumb_img">
+                <div v-for="(card, index) in cards" class="thumb_img" :class="card.classActive">
                     <img :src="'./assets/' + card.img" :alt="index">
                 </div>
 
