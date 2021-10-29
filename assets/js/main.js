@@ -38,12 +38,19 @@ const root = new Vue({
     },
 
     methods: {
-                scrollUp(){
+        scrollUp(){
             //code here
         },
         
         scrollDown(){
+            /* console.log(this['cards'][0].status);
+            console.log(this.counter); */
+            // console.log(this.cards[this.counter].status);
+            this.cards[this.counter].status = false;
+            this.counter++
 
+            this.cards[this.counter].status = true;
+            console.log(this.cards);
         }
 
     }
