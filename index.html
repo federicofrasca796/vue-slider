@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel VueJS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
     <main class="container" id="root">
@@ -19,7 +20,11 @@
             <!-- Carousel w/ thumbnails -->
             <div class="carousel">
                 <!-- Thumbnails  -->
-                
+                <div v-for="(card, index) in cards" class="thumb_img">
+                    <img :src="'./assets/' + card.img" :alt="index">
+                </div>
+
+
                 <!-- Buttons  -->
                 <button id="btn_up" class="scroll_btn">
                     <i class="fas fa-chevron-up"></i>
