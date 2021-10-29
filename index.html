@@ -14,7 +14,7 @@
         <div class="img_showreel clearfix">
             <!-- Main img -->
             <div class="hero">
-                <div v-for="card in cards" class="hero_content">
+                <div v-for="card in cards" v-if="card.status" class="hero_content">
                     <img :src="'./assets/' + card.img" alt="">
                     <div class="hero_txt">
                         <h1>{{card.title}}</h1>
@@ -32,10 +32,10 @@
 
 
                 <!-- Buttons  -->
-                <button id="btn_up" class="scroll_btn">
+                <button @click="scrollUp" id="btn_up" class="scroll_btn">
                     <i class="fas fa-chevron-up"></i>
                 </button>
-                <button id="btn_down" class="scroll_btn">
+                <button @click="scrollDown" id="btn_down" class="scroll_btn">
                     <i class="fas fa-chevron-down"></i>
                 </button>
             </div>

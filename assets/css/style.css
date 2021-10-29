@@ -72,7 +72,7 @@ img{
 }
 .hero_content{
     height:100%;
-    display: none;
+    /* display: none; */
 }
 .hero_txt{
     width: 60%;
