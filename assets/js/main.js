@@ -45,9 +45,15 @@ const root = new Vue({
         ],
 
         counter: 0,
+
+
     },
 
     methods: {
+        mounted(){
+            this.autoPlay();
+        },
+
         scrollUp(){
             if(this.counter > 0){
                 //display none to previous hero img
@@ -75,7 +81,6 @@ const root = new Vue({
                 this.cards[this.counter].status = true;
                 this.cards[this.counter].classActive = 'active';
             }
-            console.log(this.counter);
         },
         
         scrollDown(){
@@ -105,7 +110,11 @@ const root = new Vue({
                 this.cards[this.counter].status = true;
                 this.cards[this.counter].classActive = 'active';
             }
-            console.log(this.counter);
+        },
+        
+        autoPlay(){
+            setTimeout(this.scrollDown, 3 * 1000);
+
         }
 
     }
