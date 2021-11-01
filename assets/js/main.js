@@ -113,12 +113,6 @@ const root = new Vue({
             }
         },
         
-        autoplay: function(){
-            console.log('autoplay on');
-            setTimeout(this.scrollDown, 3 * 1000);
-
-        },
-
     }
 });
 
