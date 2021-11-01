@@ -46,14 +46,15 @@ const root = new Vue({
 
         counter: 0,
 
+        mounted:function(){
+            this.autoplay
+        },
+
 
     },
 
     methods: {
-        mounted(){
-            this.autoPlay();
-        },
-
+        
         scrollUp(){
             if(this.counter > 0){
                 //display none to previous hero img
@@ -112,11 +113,14 @@ const root = new Vue({
             }
         },
         
-        autoPlay(){
+        autoplay: function(){
+            console.log('autoplay on');
             setTimeout(this.scrollDown, 3 * 1000);
 
-        }
+        },
 
     }
 });
 
+console.log(root.scrollDown);
+setInterval(root.scrollDown, 3 * 1000);
